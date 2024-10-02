@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/no_image.png-7e4632ad2d21010b279ddaa4725bacb7.stex"
+path="res://.import/darkgreenarrow_upright.png-7dbab373b347061d5531fa350c8a4922.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/escoria-core/game/assets/images/no_image.png"
-dest_files=[ "res://.import/no_image.png-7e4632ad2d21010b279ddaa4725bacb7.stex" ]
+source_file="res://addons/escoria-wizard/graphics/darkgreenarrow_upright.png"
+dest_files=[ "res://.import/darkgreenarrow_upright.png-7dbab373b347061d5531fa350c8a4922.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
