@@ -806,9 +806,16 @@ default_bus_layout="res://addons/escoria-core/default_bus_layout.tres"
 
 escoria="*res://addons/escoria-core/game/esc_autoload.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-9verbs/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/escoria-core/plugin.cfg", "res://addons/escoria-dialog-simple/plugin.cfg", "res://addons/escoria-ui-simplemouse/plugin.cfg", "res://addons/escoria-wizard/plugin.cfg" )
 
 [escoria]
 
@@ -834,7 +841,7 @@ debug/enable_room_selector=false
 debug/room_selector_room_dir=""
 debug/enable_hover_stack_viewer=false
 ui/default_dialog_type="floating"
-ui/game_scene="res://addons/escoria-ui-9verbs/game.tscn"
+ui/game_scene="res://addons/escoria-ui-simplemouse/game.tscn"
 ui/inventory_items_path="res://game/items/inventory/"
 ui/default_transition="curtain"
 ui/transition_paths=[ "res://addons/escoria-core/game/scenes/transitions/shaders/" ]
