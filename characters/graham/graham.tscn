@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_player.gd" type="Script" id=1]
 [ext_resource path="res://characters/graham/spritesheet-idle.png" type="Texture" id=2]
@@ -71,13 +71,13 @@ mirrored = false
 resource_name = "Right"
 script = ExtResource( 6 )
 animation = "walkright"
-mirrored = false
+mirrored = true
 
 [sub_resource type="Resource" id=39]
 resource_name = "Down Right"
 script = ExtResource( 6 )
 animation = "walkfrontright"
-mirrored = false
+mirrored = true
 
 [sub_resource type="Resource" id=40]
 resource_name = "Down"
@@ -89,13 +89,13 @@ mirrored = false
 resource_name = "Down Left"
 script = ExtResource( 6 )
 animation = "walkfrontright"
-mirrored = true
+mirrored = false
 
 [sub_resource type="Resource" id=42]
 resource_name = "Left"
 script = ExtResource( 6 )
 animation = "walkright"
-mirrored = true
+mirrored = false
 
 [sub_resource type="Resource" id=43]
 resource_name = "Up Left"
@@ -113,13 +113,13 @@ mirrored = false
 resource_name = "Up Right"
 script = ExtResource( 6 )
 animation = "idlebackright"
-mirrored = false
+mirrored = true
 
 [sub_resource type="Resource" id=46]
 resource_name = "Right"
 script = ExtResource( 6 )
 animation = "idleright"
-mirrored = false
+mirrored = true
 
 [sub_resource type="Resource" id=47]
 resource_name = "Down Right"
@@ -143,20 +143,25 @@ mirrored = true
 resource_name = "Left"
 script = ExtResource( 6 )
 animation = "idleright"
-mirrored = true
+mirrored = false
 
 [sub_resource type="Resource" id=51]
 resource_name = "Up Left"
 script = ExtResource( 6 )
 animation = "idlebackright"
-mirrored = true
+mirrored = false
+
+[sub_resource type="Resource" id=53]
+script = ExtResource( 6 )
+animation = ""
+mirrored = false
 
 [sub_resource type="Resource" id=30]
 script = ExtResource( 4 )
 dir_angles = [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ]
 directions = [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ]
 idles = [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ]
-speaks = [  ]
+speaks = [ SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ), SubResource( 53 ) ]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -336,14 +341,25 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=52]
+radius = 38.0
+height = 190.0
+
 [node name="ESCPlayer" type="Area2D"]
 pause_mode = 1
 script = ExtResource( 1 )
 global_id = "graham"
 is_movable = true
 combine_when_selected_action_is_in = [  ]
+speed = 150
 animations = SubResource( 30 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -3, -128 )
 frames = SubResource( 26 )
-animation = "idlefront"
+animation = "idleright"
+speed_scale = 1.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -5, -129 )
+shape = SubResource( 52 )

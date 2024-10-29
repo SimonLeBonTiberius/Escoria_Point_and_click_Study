@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
+[ext_resource path="res://characters/graham/graham.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_background.gd" type="Script" id=3]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_terrain.gd" type="Script" id=4]
+[ext_resource path="res://rooms/pub/pub_bg.png" type="Texture" id=5]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=6]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 1530, 734, 1611, 735, 1639, 886, 1487, 862, 2883, 762, 2989, 720, 3223, 739, 3274, 954, 2723, 847, 1370, 917, 1974, 941, 694, 949, 894, 894, 1050, 937, 1211, 885, 2285, 920, 1817, 888 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 3, 2, 10 ), PoolIntArray( 11, 12, 13 ), PoolIntArray( 7, 11, 13, 10 ), PoolIntArray( 13, 14, 9 ), PoolIntArray( 15, 8, 7 ), PoolIntArray( 2, 16, 10 ), PoolIntArray( 13, 9, 10 ), PoolIntArray( 7, 10, 15 ) ]
+outlines = [ PoolVector2Array( 694, 949, 894, 894, 1050, 937, 1211, 885, 1370, 917, 1487, 862, 1530, 734, 1611, 735, 1639, 886, 1817, 888, 1974, 941, 2285, 920, 2723, 847, 2883, 762, 2989, 720, 3223, 739, 3274, 954 ) ]
+
+[node name="ESCRoom" type="Node2D"]
+script = ExtResource( 1 )
+global_id = "pub"
+player_scene = ExtResource( 2 )
+camera_limits = [ Rect2( 0, 0, 3975, 956 ) ]
+
+[node name="ESCBackground" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+script = ExtResource( 3 )
+
+[node name="ESCTerrain" type="Navigation2D" parent="."]
+script = ExtResource( 4 )
+scale_min = 2.0
+scale_max = 2.0
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="ESCTerrain"]
+navpoly = SubResource( 1 )
+
+[node name="start" type="Position2D" parent="."]
+script = ExtResource( 6 )
+global_id = "start"
+is_start_location = true
