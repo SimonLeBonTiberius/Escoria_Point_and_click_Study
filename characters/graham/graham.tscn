@@ -6,7 +6,7 @@
 [ext_resource path="res://addons/escoria-core/game/core-scripts/resources/esc_animationresource.gd" type="Script" id=4]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/resources/esc_directionangle.gd" type="Script" id=5]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/resources/esc_animationname.gd" type="Script" id=6]
-[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=7]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_dialog_location.gd" type="Script" id=8]
 
 [sub_resource type="Resource" id=27]
 resource_name = "Up"
@@ -365,6 +365,6 @@ speed_scale = 1.8
 position = Vector2( -5, -129 )
 shape = SubResource( 52 )
 
-[node name="ESCLocation" type="Position2D" parent="."]
+[node name="ESCDialogLocation" type="Position2D" parent="."]
 position = Vector2( -1, -269 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )

@@ -45,7 +45,6 @@ is_start_location = true
 
 [node name="Blackboard" type="Area2D" parent="."]
 pause_mode = 1
-position = Vector2( 1096, 225 )
 script = ExtResource( 7 )
 global_id = "blackboard"
 esc_script = "res://rooms/pub/blackboard.esc"
@@ -54,6 +53,10 @@ combine_when_selected_action_is_in = [  ]
 animations = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blackboard"]
-position = Vector2( -1091.31, -214.845 )
+position = Vector2( 3.99988, 5 )
 scale = Vector2( 0.995089, 0.994966 )
 polygon = PoolVector2Array( 1030, 94, 1175, 113, 1166, 371, 1024, 370 )
+
+[node name="ESCLocation" type="Position2D" parent="Blackboard"]
+position = Vector2( 1216, 912 )
+script = ExtResource( 6 )
