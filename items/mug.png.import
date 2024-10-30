@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/barrels_fg.png-183e67b0ba87daf266792e1f451b5ec7.stex"
+path="res://.import/mug.png-33dd5ebb62652969fd95d80a2abcc888.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/asstets_excoria_test/barrels_fg.png"
-dest_files=[ "res://.import/barrels_fg.png-183e67b0ba87daf266792e1f451b5ec7.stex" ]
+source_file="res://items/mug.png"
+dest_files=[ "res://.import/mug.png-33dd5ebb62652969fd95d80a2abcc888.stex" ]
 
 [params]
 

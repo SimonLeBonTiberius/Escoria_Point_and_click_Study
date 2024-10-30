@@ -865,6 +865,10 @@ dialog_simple/left_click_action="Speed up"
 dialog_simple/stop_talking_animation_on="End of audio"
 wizard/path_to_rooms="res://rooms"
 
+[global]
+
+item=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

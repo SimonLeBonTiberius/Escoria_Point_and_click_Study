@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
 [ext_resource path="res://characters/graham/graham.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://rooms/pub/pub_bg.png" type="Texture" id=5]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_location.gd" type="Script" id=6]
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
+[ext_resource path="res://rooms/pub/barrels_fg.png" type="Texture" id=8]
+[ext_resource path="res://items/beer.tscn" type="PackedScene" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 1530, 734, 1611, 735, 1639, 886, 1487, 862, 2883, 762, 2989, 720, 3223, 739, 3274, 954, 2723, 847, 734, 952, 894, 894, 1050, 937, 1974, 941, 1370, 917, 1211, 885, 2285, 920, 1817, 888 )
@@ -60,3 +62,19 @@ polygon = PoolVector2Array( 1030, 94, 1175, 113, 1166, 371, 1024, 370 )
 [node name="ESCLocation" type="Position2D" parent="Blackboard"]
 position = Vector2( 1216, 912 )
 script = ExtResource( 6 )
+
+[node name="Barrels" type="Area2D" parent="."]
+pause_mode = 1
+position = Vector2( 3031, 801 )
+z_index = 1000
+script = ExtResource( 7 )
+combine_when_selected_action_is_in = [  ]
+inventory_texture = ExtResource( 8 )
+animations = null
+
+[node name="Sprite" type="Sprite" parent="Barrels"]
+position = Vector2( 23, 24 )
+texture = ExtResource( 8 )
+
+[node name="ESCItem" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1622, 799 )
