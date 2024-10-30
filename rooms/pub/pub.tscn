@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_room.gd" type="Script" id=1]
 [ext_resource path="res://characters/graham/graham.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://addons/escoria-core/game/core-scripts/esc_item.gd" type="Script" id=7]
 [ext_resource path="res://rooms/pub/barrels_fg.png" type="Texture" id=8]
 [ext_resource path="res://items/beer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/escoria-core/game/core-scripts/esc_exit.gd" type="Script" id=10]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 1530, 734, 1611, 735, 1639, 886, 1487, 862, 2883, 762, 2989, 720, 3223, 739, 3274, 954, 2723, 847, 734, 952, 894, 894, 1050, 937, 1974, 941, 1370, 917, 1211, 885, 2285, 920, 1817, 888 )
@@ -18,6 +19,7 @@ outlines = [ PoolVector2Array( 734, 952, 894, 894, 1050, 937, 1211, 885, 1370, 9
 [node name="ESCRoom" type="Node2D"]
 script = ExtResource( 1 )
 global_id = "pub"
+esc_script = "res://rooms/pub/room_pub.esc"
 player_scene = ExtResource( 2 )
 camera_limits = [ Rect2( 0, 0, 3975, 956 ) ]
 
@@ -78,3 +80,17 @@ texture = ExtResource( 8 )
 
 [node name="ESCItem" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1622, 799 )
+
+[node name="ESCExit" type="Area2D" parent="."]
+script = ExtResource( 10 )
+global_id = "pub_door"
+tooltip_name = "pub_exit"
+target_scene = "res://rooms/park/park.tscn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ESCExit"]
+polygon = PoolVector2Array( 2975, 277, 3195, 272, 3226, 740, 2975, 717 )
+
+[node name="ESCLocation" type="Position2D" parent="ESCExit"]
+position = Vector2( 3040, 767 )
+script = ExtResource( 6 )
+global_id = "pub_exit"

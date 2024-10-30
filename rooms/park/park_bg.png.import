@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/park_lightmap.png-85d152643809ea0793c95c2d7e119c66.stex"
+path="res://.import/park_bg.png-24d03c17a18ef714abdb318d71bb6f15.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/asstets_excoria_test/park_lightmap.png"
-dest_files=[ "res://.import/park_lightmap.png-85d152643809ea0793c95c2d7e119c66.stex" ]
+source_file="res://rooms/park/park_bg.png"
+dest_files=[ "res://.import/park_bg.png-24d03c17a18ef714abdb318d71bb6f15.stex" ]
 
 [params]
 
