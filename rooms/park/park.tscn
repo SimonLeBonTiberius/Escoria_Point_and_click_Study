@@ -38,6 +38,7 @@ navpoly = SubResource( 1 )
 script = ExtResource( 7 )
 global_id = "exit_to_pub"
 esc_script = "res://rooms/park/room_park.esc"
+is_exit = true
 tooltip_name = "Exit to pub"
 default_action = "use"
 target_scene = "res://rooms/pub/pub.tscn"
